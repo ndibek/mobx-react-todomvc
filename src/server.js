@@ -36,6 +36,7 @@ const renderFullPage = html => {
 			<script>
 				window.initialState = ${initialStateJSON}
 			</script>
+		
 		</head>
 		<body>
 			<section id="todoapp" class="todoapp">${html}</section>

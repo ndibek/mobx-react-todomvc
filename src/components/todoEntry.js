@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import {observer} from 'mobx-react';
+import coolaData from "../cooladata/cooladata";
 
 const ENTER_KEY = 13;
 
@@ -23,6 +24,7 @@ export default class TodoEntry extends React.Component {
 		}
 
 		event.preventDefault();
+    coolaData.sendEvent({"event_name":"add_entry","user_id":"1001","event_timestamp_epoch":Date.now(),"first_name":"john","last_name":"doe"})
 
 		var val = ReactDOM.findDOMNode(this.refs.newField).value.trim();
 

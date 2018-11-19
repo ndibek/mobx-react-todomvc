@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {observer} from 'mobx-react';
 import {observable, expr} from 'mobx';
+import coolaData from "../cooladata/cooladata";
 
 const ESCAPE_KEY = 27;
 const ENTER_KEY = 13;
@@ -61,6 +62,7 @@ export default class TodoItem extends React.Component {
 		const todo = this.props.todo;
 		this.props.viewStore.todoBeingEdited = todo;
 		this.editText = todo.title;
+    coolaData.sendEvent({"event_name":"edit","user_id":"1001","event_timestamp_epoch":Date.now(),"todo": todo.title})
 	};
 
 	handleKeyDown = (event) => {

@@ -8,6 +8,7 @@ import TodoFooter from './todoFooter';
 import { ALL_TODOS, ACTIVE_TODOS, COMPLETED_TODOS } from '../constants';
 
 import DevTool from 'mobx-react-devtools';
+import coolaData from "../cooladata/cooladata";
 
 @observer
 export default class TodoApp extends React.Component {
@@ -36,6 +37,7 @@ export default class TodoApp extends React.Component {
 				'/completed': function() { viewStore.todoFilter = COMPLETED_TODOS; }
 			});
 		router.init('/');
+      coolaData.sendEvent({"event_name":"page_load","user_id":"1001","event_timestamp_epoch":Date.now(),"first_name":"john","last_name":"doe"})
 		}
 	}
 }

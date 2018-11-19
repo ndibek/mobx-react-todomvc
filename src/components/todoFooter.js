@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {observer} from 'mobx-react';
 import {pluralize} from '../utils';
 import { ALL_TODOS, ACTIVE_TODOS, COMPLETED_TODOS } from '../constants';
+import coolaData from "../cooladata/cooladata";
 
 @observer
 export default class TodoFooter extends React.Component {
@@ -47,6 +48,7 @@ export default class TodoFooter extends React.Component {
 
 	clearCompleted = () => {
 		this.props.todoStore.clearCompleted();
+    coolaData.sendEvent({"event_name":"clear_all","user_id":"1001","event_timestamp_epoch":Date.now(),"first_name":"john","last_name":"doe"})
 	};
 }
 
