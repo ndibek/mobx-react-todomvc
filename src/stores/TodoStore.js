@@ -1,10 +1,15 @@
 import {observable, computed, reaction} from 'mobx';
 import TodoModel from '../models/TodoModel'
 import * as Utils from '../utils';
+import faker from 'faker'
 
 
 export default class TodoStore {
+	faker = require('faker')
 	@observable todos = [];
+	@observable firstName = faker.name.firstName()
+	@observable lastName = faker.name.firstName()
+	@observable userId = faker.random.number()
 
 	@computed get activeTodoCount() {
 		return this.todos.reduce(

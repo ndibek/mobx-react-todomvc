@@ -48,7 +48,7 @@ export default class TodoFooter extends React.Component {
 
 	clearCompleted = () => {
 		this.props.todoStore.clearCompleted();
-    coolaData.sendEvent({"event_name":"clear_all","user_id":"1001","event_timestamp_epoch":Date.now(),"first_name":"john","last_name":"doe"})
+coolaData.sendEvent({"event_name":"clear_all","user_id":this.props.todoStore.userId,"event_timestamp_epoch":Date.now(),"first_name":this.props.todoStore.firstName,"last_name":this.props.todoStore.lastName})
 	};
 }
 

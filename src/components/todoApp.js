@@ -37,7 +37,7 @@ export default class TodoApp extends React.Component {
 				'/completed': function() { viewStore.todoFilter = COMPLETED_TODOS; }
 			});
 		router.init('/');
-      coolaData.sendEvent({"event_name":"page_load","user_id":"1001","event_timestamp_epoch":Date.now(),"first_name":"john","last_name":"doe"})
+      coolaData.sendEvent({"event_name":"page_load","user_id":this.props.todoStore.userId,"event_timestamp_epoch":Date.now(),"first_name":this.props.todoStore.firstName,"last_name":this.props.todoStore.lastName})
 		}
 	}
 }
